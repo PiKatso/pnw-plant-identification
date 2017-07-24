@@ -1,4 +1,6 @@
 class Plant < ApplicationRecord
+  include Filterable
+
   validates :name, :scientific_name, :plant_type, :general, :ecology, :leaves, :cones, :bark, :branches, presence: true
 
   # Scopes

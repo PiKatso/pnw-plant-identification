@@ -1,10 +1,56 @@
-<h1>All Plants</h1>
+<h1>Identify Plants</h1>
+<%= form_tag('/leaves_search', method: 'get') do %>
+  <%= label_tag(:leaves, "Search by leaves type") %>
+  <br>
+  <%= text_field_tag(:leaves) %>
+  <br>
+  <%= submit_tag("Leaves Search") %>
+<% end %>
+<br>
+<%= form_tag('/cones_search', method: 'get') do %>
+  <%= label_tag(:cones, "Search by cones type") %>
+  <br>
+  <%= text_field_tag(:cones) %>
+  <br>
+  <%= submit_tag("Cones Search") %>
+<% end %>
+<br>
+<%= form_tag('/bark_search', method: 'get') do %>
+  <%= label_tag(:bark, "Search by bark type") %>
+  <br>
+  <%= text_field_tag(:bark) %>
+  <br>
+  <%= submit_tag("Bark Search") %>
+<% end %>
+<br>
+<%= form_tag('/branches_search', method: 'get') do %>
+  <%= label_tag(:branches, "Search by branches type") %>
+  <br>
+  <%= text_field_tag(:branches) %>
+  <br>
+  <%= submit_tag("Branches Search") %>
+<% end %>
+<br>
+
+
+<h1>Plants</h1>
 <div class="plant-plants">
   <% @plants.each do |plant| %>
   <div class="plant">
     <a class="plant-item" href="<%= plant_path(plant) %>">
-      <div class="plant-caption"><em><%= plant.name %></em><br>$<%= plant.scientific_name %></div>
+      <div class="plant-caption">
+        <em><%= plant.name %></em> ~ <%= plant.scientific_name %></div>
     </a>
   </div>
   <% end %>
 </div>
+
+<br>
+
+<%= form_tag('/name_search', method: 'get') do %>
+  <%= label_tag(:name, "Search by Name type") %>
+  <br>
+  <%= text_field_tag(:name) %>
+  <br>
+  <%= submit_tag("Name Search") %>
+<% end %>

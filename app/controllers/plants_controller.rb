@@ -5,8 +5,8 @@ class PlantsController < ApplicationController
   # end
 
   def index
-    # creates an anonymous scope
-    @plants = Plants.where(nil)
+    # # creates an anonymous scope
+    @plants = Plant.where(nil)
 
     @plants = @plants.s_b_cones(params[:cones]) if params[:cones].present?
     @plants = @plants.s_b_bark(params[:bark]) if params[:bark].present?
@@ -14,9 +14,9 @@ class PlantsController < ApplicationController
     @plants = @plants.s_b_branches(params[:branches]) if params[:branches].present?
 
     # name scope
-    @plants = @plants.starts_with(params[:starts_with]) if params[:starts_with].present?
-
-    @plants = Plant.all
+    @plants = @plants.s_b_name(params[:name]) if params[:name].present?
+    #
+    # @plants = Plant.all
   end
 
   def show
@@ -65,6 +65,10 @@ private
 
   def plant_params
     params.require(:plant).permit(:name, :scientific_name, :plant_type, :general, :ecology, :leaves, :cones, :bark, :branches)
+  end
+
+  def scope_params(params)
+     params.slice(:name, :bark, :cones, :branches, :leaves)
   end
 
 end

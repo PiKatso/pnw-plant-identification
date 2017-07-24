@@ -2,4 +2,10 @@ Rails.application.routes.draw do
   root to: 'plants#index'
 
   resources :plants
+
+  get "/leaves_search" => "plants#index"
+  get "/cones_search" => "plants#index"
+  get "/bark_search" => "plants#index"
+  get "/branches_search" => "plants#index"
+  get "/name_search" => "plants#index"
 end
