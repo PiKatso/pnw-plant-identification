@@ -1,8 +1,10 @@
+<%= select_tag "state_id", options_from_collection_for_select(Plant.all.order(:name), :id, :name) %>
+
 <h1>Identify Plants</h1>
 <%= form_tag('/leaves_search', method: 'get') do %>
   <%= label_tag(:leaves, "Search by leaves type") %>
   <br>
-  <%= text_field_tag(:leaves) %>
+  <%= select_tag :leaves, options_from_collection_for_select(@plants, :leaves, :leaves) %>
   <br>
   <%= submit_tag("Leaves Search") %>
 <% end %>
