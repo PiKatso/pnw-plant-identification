@@ -1,0 +1,10 @@
+<h1>All Plants</h1>
+<div class="plant-plants">
+  <% @plants.each do |plant| %>
+  <div class="plant">
+    <a class="plant-item" href="<%= plant_path(plant) %>">
+      <div class="plant-caption"><em><%= plant.name %></em><br>$<%= plant.scientific_name %></div>
+    </a>
+  </div>
+  <% end %>
+</div>
