@@ -7,7 +7,7 @@ class Seed
   end
 
   def generate_plants
-    20.times do |i|
+    50.times do |i|
       plant = Plant.create!(
         name: Faker::Ancient.god,
         scientific_name: Faker::Ancient.hero,

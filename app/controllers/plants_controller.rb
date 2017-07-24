@@ -8,6 +8,7 @@ class PlantsController < ApplicationController
     # # creates an anonymous scope
     @plants = Plant.where(nil)
 
+
     @plants = @plants.s_b_cones(params[:cones]) if params[:cones].present?
     @plants = @plants.s_b_bark(params[:bark]) if params[:bark].present?
     @plants = @plants.s_b_leaves(params[:leaves]) if params[:leaves].present?
