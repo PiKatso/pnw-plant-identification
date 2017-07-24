@@ -1,10 +1,8 @@
-<%= select_tag "state_id", options_from_collection_for_select(Plant.all.order(:name), :id, :name) %>
-
 <h1>Identify Plants</h1>
 <%= form_tag('/leaves_search', method: 'get') do %>
   <%= label_tag(:leaves, "Search by leaves type") %>
   <br>
-  <%= select_tag :leaves, options_from_collection_for_select(@plants, :leaves, :leaves) %>
+  <%= select_tag :leaves, options_from_collection_for_select(@plants.map, :leaves, :leaves) %>
   <br>
   <%= submit_tag("Leaves Search") %>
 <% end %>
@@ -12,7 +10,7 @@
 <%= form_tag('/cones_search', method: 'get') do %>
   <%= label_tag(:cones, "Search by cones type") %>
   <br>
-  <%= text_field_tag(:cones) %>
+  <%= select_tag :cones, options_from_collection_for_select(@plants, :cones, :cones) %>
   <br>
   <%= submit_tag("Cones Search") %>
 <% end %>
@@ -20,7 +18,7 @@
 <%= form_tag('/bark_search', method: 'get') do %>
   <%= label_tag(:bark, "Search by bark type") %>
   <br>
-  <%= text_field_tag(:bark) %>
+  <%= select_tag :bark, options_from_collection_for_select(@plants, :bark, :bark) %>
   <br>
   <%= submit_tag("Bark Search") %>
 <% end %>
@@ -28,7 +26,7 @@
 <%= form_tag('/branches_search', method: 'get') do %>
   <%= label_tag(:branches, "Search by branches type") %>
   <br>
-  <%= text_field_tag(:branches) %>
+  <%= select_tag :branches, options_from_collection_for_select(@plants, :branches, :branches) %>
   <br>
   <%= submit_tag("Branches Search") %>
 <% end %>
