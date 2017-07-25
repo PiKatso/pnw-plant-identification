@@ -2,7 +2,7 @@
 <%= form_tag('/leaves_search', method: 'get') do %>
   <%= label_tag(:leaves, "Search by leaves type") %>
   <br>
-  <%= select_tag :leaves, options_from_collection_for_select(@plants.map, :leaves, :leaves) %>
+  <%= select_tag :leaves, options_from_collection_for_select(@plants.uniq{ |o| o.leaves }, :leaves, :leaves) %>
   <br>
   <%= submit_tag("Leaves Search") %>
 <% end %>
@@ -10,7 +10,7 @@
 <%= form_tag('/cones_search', method: 'get') do %>
   <%= label_tag(:cones, "Search by cones type") %>
   <br>
-  <%= select_tag :cones, options_from_collection_for_select(@plants, :cones, :cones) %>
+  <%= select_tag :cones, options_from_collection_for_select(@plants.uniq{ |o| o.cones }, :cones, :cones) %>
   <br>
   <%= submit_tag("Cones Search") %>
 <% end %>
@@ -18,7 +18,7 @@
 <%= form_tag('/bark_search', method: 'get') do %>
   <%= label_tag(:bark, "Search by bark type") %>
   <br>
-  <%= select_tag :bark, options_from_collection_for_select(@plants, :bark, :bark) %>
+  <%= select_tag :bark, options_from_collection_for_select(@plants.uniq{ |o| o.bark }, :bark, :bark) %>
   <br>
   <%= submit_tag("Bark Search") %>
 <% end %>
@@ -26,7 +26,7 @@
 <%= form_tag('/branches_search', method: 'get') do %>
   <%= label_tag(:branches, "Search by branches type") %>
   <br>
-  <%= select_tag :branches, options_from_collection_for_select(@plants, :branches, :branches) %>
+  <%= select_tag :branches, options_from_collection_for_select(@plants.uniq{ |o| o.branches }, :branches, :branches) %>
   <br>
   <%= submit_tag("Branches Search") %>
 <% end %>
