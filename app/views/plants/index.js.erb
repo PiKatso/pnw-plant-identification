@@ -1,11 +1,22 @@
-// btn leaves-search
-$('#cones-search').show();
-$('#leaves-search').hide();
-// btn cones-search
-$('#bark-search').show();
-$('#cones-search').hide();
-// btn bark-search
-$('#branches-search').show();
-$('#bark-search').hide();
-// btn branches/submit-search
-// none
+$(document).ready(function() {
+  // btn leaves-search
+  $('#leaves-btn').on("click", function(e){
+    $('#cones-search').show();
+    $('#leaves-search').hide();
+    e.preventDefault();
+  });
+  // btn cones-search
+  $('#cones-btn').on("click", function(e){
+    $('#bark-search').show();
+    $('#cones-search').hide();
+    e.preventDefault();
+  });
+  // btn bark-search
+  $('#bark-btn').on("click", function(e){
+    $('#branches-search').show();
+    $('#bark-search').hide();
+    e.preventDefault();
+  });
+  // btn branches/submit-search
+  // none
+});
