@@ -8,7 +8,9 @@
   <%= submit_tag "Leaves Search", :id => "leaves-btn" %>
   <% end %>
 </div>
+
 <br>
+
 <div id="cones-search">
   <%= form_tag('/cones_search', remote: true, method: 'get') do %>
   <%= label_tag(:cones, "Search by cones type") %>
@@ -18,7 +20,9 @@
   <%= submit_tag"Cones Search", :id => "cones-btn" %>
   <% end %>
 </div>
+
 <br>
+
 <div id="bark-search">
   <%= form_tag('/bark_search', remote: true, method: 'get') do %>
   <%= label_tag(:bark, "Search by bark type") %>
@@ -28,7 +32,9 @@
   <%= submit_tag "Bark Search", :id => "bark-btn" %>
   <% end %>
 </div>
+
 <br>
+
 <div id="branches-search">
   <%= form_tag('/branches_search', method: 'get') do %>
   <%= label_tag(:branches, "Search by branches type") %>
@@ -38,6 +44,7 @@
   <%= submit_tag("Branches Search") %>
   <% end %>
 </div>
+
 <br>
 
 
