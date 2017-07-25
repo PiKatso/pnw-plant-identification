@@ -1,25 +1,27 @@
 class PlantsController < ApplicationController
 
-  # def home
-  #
-  # end
 
   def index
     # # creates an anonymous scope
     @plants = Plant.where(nil)
 
-    @plants = @plants.s_b_branches(params[:branches]) if params[:branches].present?
+    @plants = @plants.s_b_leaves(params[:leaves]) if params[:leaves].present?
 
     @plants = @plants.s_b_cones(params[:cones]) if params[:cones].present?
 
     @plants = @plants.s_b_bark(params[:bark]) if params[:bark].present?
 
-    @plants = @plants.s_b_leaves(params[:leaves]) if params[:leaves].present?
+    @plants = @plants.s_b_branches(params[:branches]) if params[:branches].present?
 
     # name scope
     @plants = @plants.s_b_name(params[:name]) if params[:name].present?
     #
     # @plants = Plant.all
+
+    # respond_to do |format|
+    #   format.html { redirect_to plants_path }
+    #   format.js
+    # end
   end
 
   def show
