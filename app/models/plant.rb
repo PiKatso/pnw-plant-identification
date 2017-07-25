@@ -4,7 +4,7 @@ class Plant < ApplicationRecord
   validates :name, :scientific_name, :plant_type, :general, :ecology, :leaves, :cones, :bark, :branches, presence: true
 
   # Scopes
-  # scope :search_all, -> params { where leaves: params[:leaves], cones: params[:cones], bark: params[:bark], branches: params[:branches] }
+  scope :search_all, -> (leaves, cones, bark, branches) { where leaves: leaves, cones: cones, bark: bark, branches: branches }
 
   scope :s_b_leaves, -> (leaves) { where leaves: leaves }
   scope :s_b_cones, -> (cones) { where cones: cones}

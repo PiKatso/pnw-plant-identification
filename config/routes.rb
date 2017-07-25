@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/bark_search" => "plants#index"
   get "/branches_search" => "plants#index"
   get "/name_search" => "plants#index"
+  get "/plants_search" => "plants#index"
 end
