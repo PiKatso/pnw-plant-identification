@@ -5,7 +5,7 @@
     <br>
     <%= select_tag :leaves, options_from_collection_for_select(@plants.uniq{ |o| o.leaves }, :leaves, :leaves) %>
     <br>
-    <%= submit_tag "Leaves Search", :id => "leaves-btn" %>
+    <%= button_tag "Leaves Search", :id => "leaves-btn" %>
   </div>
 
   <br>
@@ -15,7 +15,7 @@
     <br>
     <%= select_tag :cones, options_from_collection_for_select(@plants.uniq{ |o| o.cones }, :cones, :cones) %>
     <br>
-    <%= submit_tag"Cones Search", :id => "cones-btn" %>
+    <%= button_tag"Cones Search", :id => "cones-btn" %>
   </div>
 
   <br>
@@ -25,7 +25,7 @@
     <br>
     <%= select_tag :bark, options_from_collection_for_select(@plants.uniq{ |o| o.bark }, :bark, :bark) %>
     <br>
-    <%= submit_tag "Bark Search", :id => "bark-btn" %>
+    <%= button_tag "Bark Search", :id => "bark-btn" %>
   </div>
 
   <br>
