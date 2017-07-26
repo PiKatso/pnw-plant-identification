@@ -1,9 +1,7 @@
-<div id="cones-search">
-  <%= form_tag('/plants_search', remote: true, method: 'get') do %>
-    <%= label_tag(:cones, "Search by cones type") %>
-    <br>
-    <%= select_tag :cones, options_from_collection_for_select(@plants.uniq{ |o| o.cones }, :cones, :cones) %>
-    <br>
-    <%= button_tag"Cones Search", :id => "cones-btn" %>
-  <% end %>
-</div>
+<%= form_tag('/plants_search', remote: true, method: 'get') do %>
+  <%= label_tag(:cones, "Search by cones type") %>
+  <br>
+  <%= select_tag :cones, options_from_collection_for_select(@plants.uniq{ |o| o.cones }, :cones, :cones) %>
+  <br>
+  <%= button_tag "Cones Search", :id => "cones-btn" %>
+<% end %>
