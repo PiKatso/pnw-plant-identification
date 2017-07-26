@@ -9,6 +9,7 @@ class PlantsController < ApplicationController
     # # creates an anonymous scope
     @plants = Plant.where(nil)
 
+    #  SCOPE search by all params
     # @plants = @plants.search_all(@@leaves, @@cones, @@bark, params[:branches]) if params.values_at( :branches).all?(&:present?)
 
     @@leaves = params[:leaves] if params[:leaves].present?
@@ -20,6 +21,7 @@ class PlantsController < ApplicationController
     @@plants = @plants.s_b_leaves(params[:leaves]) if params[:leaves].present?
     @@plants = @@plants.s_b_cones(params[:cones]) if params[:cones].present?
     @@plants = @@plants.s_b_bark(params[:bark]) if params[:bark].present?
+# byebug
     @plants = @@plants.s_b_branches(params[:branches]) if params[:branches].present?
 
     # name scope
