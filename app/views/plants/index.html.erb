@@ -9,49 +9,30 @@
   <% end %>
   </div>
 
-  <br>
-
-  <div id="cones-search">
-  <%# form_tag('/plants_search', remote: true, method: 'get') do %>
-    <%# label_tag(:cones, "Search by cones type") %>
-    <br>
-    <%# select_tag :cones, options_from_collection_for_select(@plants.uniq{ |o| o.cones }, :cones, :cones) %>
-    <br>
-    <%# button_tag"Cones Search", :id => "cones-btn" %>
-  <%# end %>
-  </div>
-
-  <br>
-
-  <div id="bark-search">
-  <%# form_tag('/plants_search', remote: true, method: 'get') do %>
-    <%# label_tag(:bark, "Search by bark type") %>
-    <br>
-    <%# select_tag :bark, options_from_collection_for_select(@plants.uniq{ |o| o.bark }, :bark, :bark) %>
-    <br>
-    <%# button_tag "Bark Search", :id => "bark-btn" %>
-  <%# end %>
-  </div>
-
-  <br>
-
-
-<div id="branches-search">
-  <%# form_tag('/plants_search', method: 'get') do %>
-  <%# label_tag(:branches, "Search by branches type") %>
-  <br>
-  <%# select_tag :branches, options_from_collection_for_select(@plants.uniq{ |o| o.branches }, :branches, :branches) %>
-  <br>
-  <%# submit_tag("Branches Search") %>
-  <%# end %>
-</div>
+  <div id="cones-search"></div>
+  <div id="bark-search"></div>
+  <div id="branches-search"></div>
 
 
 
 <br>
 
+<div class="plant-plants">
+  <% if @plant %>
+  <div class="plant">
+    <a class="plant-item" href="<%= plant_path(@plant[0].id) %>">
+      <div class="plant-caption">
+        <%# binding.pry %>
+        <em><%= @plant[0].name %></em> ~ <%= @plant[0].scientific_name %></div>
+      </a>
+    </div>
+    <% end %>
+  </div>
+
+  <br>
 
 <h1>Plants</h1>
+
 <div class="plant-plants">
   <% @plants.each do |plant| %>
   <div class="plant">
