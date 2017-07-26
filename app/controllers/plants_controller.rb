@@ -18,10 +18,8 @@ class PlantsController < ApplicationController
 
     # single search params SCOPES
     @@plants = @plants.s_b_leaves(params[:leaves]) if params[:leaves].present?
-    @plants = @@plants
 
     @@plants = @@plants.s_b_cones(params[:cones], @@leaves) if params[:cones].present?
-    @plants = @@plants
 
     @@plants = @@plants.s_b_bark(params[:bark], @@leaves, @@cones) if params[:bark].present?
     @plants = @@plants
