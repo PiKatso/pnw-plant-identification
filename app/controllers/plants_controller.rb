@@ -1,5 +1,4 @@
 class PlantsController < ApplicationController
-
   # class variables
   @@leaves = nil
   @@cones = nil
@@ -9,20 +8,19 @@ class PlantsController < ApplicationController
   def index
     # # creates an anonymous scope
     @plants = Plant.where(nil)
-    # @plants = @plants.search_all(params[:leaves], params[:cones], params[:bark], params[:branches]) if params.values_at(:leaves, :cones, :bark, :branches).all?(&:present?)
 
-    @plants = @plants.s_b_leaves(params[:leaves]) if params[:leaves].present?
     @@leaves = params[:leaves] if params[:leaves].present?
+    @@cones = params[:cones] if params[:cones].present?
+    @@bark = params[:bark] if params[:bark].present?
+    @@branches = params[:branches] if params[:branches].present?
+    
+    @plants = @plants.search_all(params[:leaves], params[:cones], params[:bark], params[:branches]) if params.values_at(:branches).present?
 
-    # byebug
-    @plants = @plants.s_b_cones(params[:cones]) if params[:cones].present?
-    @@leaves = params[:cones] if params[:cones].present?
-
-    @plants = @plants.s_b_bark(params[:bark]) if params[:bark].present?
-    @@leaves = params[:bark] if params[:bark].present?
-
-    @plants = @plants.s_b_branches(params[:branches]) if params[:branches].present?
-    @@leaves = params[:branches] if params[:branches].present?
+    # single search params SCOPES
+    # @plants = @plants.s_b_leaves(params[:leaves]) if params[:leaves].present?
+    # @plants = @plants.s_b_cones(params[:cones]) if params[:cones].present?
+    # @plants = @plants.s_b_bark(params[:bark]) if params[:bark].present?
+    # @plants = @plants.s_b_branches(params[:branches]) if params[:branches].present?
 
     # name scope
     @plants = @plants.s_b_name(params[:name]) if params[:name].present?
