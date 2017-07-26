@@ -1,0 +1,9 @@
+<div id="branches-search">
+  <%= form_tag('/plants_search', method: 'get') do %>
+  <%= label_tag(:branches, "Search by branches type") %>
+  <br>
+  <%= select_tag :branches, options_from_collection_for_select(@plants.uniq{ |o| o.branches }, :branches, :branches) %>
+  <br>
+  <%= submit_tag("Branches Search") %>
+  <% end %>
+</div>

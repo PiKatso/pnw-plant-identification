@@ -1,0 +1,9 @@
+<div id="bark-search">
+<%= form_tag('/plants_search', remote: true, method: 'get') do %>
+  <%= label_tag(:bark, "Search by bark type") %>
+  <br>
+  <%= select_tag :bark, options_from_collection_for_select(@plants.uniq{ |o| o.bark }, :bark, :bark) %>
+  <br>
+  <%= button_tag "Bark Search", :id => "bark-btn" %>
+<% end %>
+</div>
