@@ -5,13 +5,13 @@ $(document).ready(function() {
 
 // // btn cones-search
 function show_bark_search(){
-  $(document).ready(function() {
+  // $(document).ready(function() {
     $('#bark-search').html('<%= j render("bark_form") %>');
     $('#cones-search').hide();
-  });
+  // });
 }
   // btn bark-search
-  $('#bark-btn').click(function(e){
+  function show_branches_search() {
     $('#branches-search').html('<%= j render("branches_form") %>');
     $('#bark-search').hide();
-  });
+  }
