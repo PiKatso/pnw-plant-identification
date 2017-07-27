@@ -13,4 +13,12 @@
 //= require rails-ujs
 //= require_tree .
 //= require jquery
-$(document).ready(function() { });
+$(document).ready(function() {});
+
+
+// function show_bark_search(){
+//  $(document).ready(function() {
+//   $('#bark-search').html('<%= j render("bark_form") %>');
+//   $('#cones-search').hide();
+// });
+// }

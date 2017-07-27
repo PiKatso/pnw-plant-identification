@@ -3,5 +3,5 @@
   <br>
   <%= select_tag :cones, options_from_collection_for_select(@plants.uniq{ |o| o.cones }, :cones, :cones) %>
   <br>
-  <%= button_tag "Cones Search", :id => "cones-btn" %>
+  <%= button_tag "Cones Search", :id => "cones-btn", onclick: 'show_bark_search()' %>
 <% end %>

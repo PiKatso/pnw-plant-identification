@@ -83,7 +83,6 @@ class PlantsController < ApplicationController
   # end
 
 private
-
   def plant_params
     params.require(:plant).permit(:name, :scientific_name, :plant_type, :general, :ecology, :leaves, :cones, :bark, :branches)
   end
@@ -91,5 +90,4 @@ private
   def scope_params(params)
      params.slice(:name, :bark, :cones, :branches, :leaves)
   end
-
 end
