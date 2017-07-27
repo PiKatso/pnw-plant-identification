@@ -1,6 +1,7 @@
 <h1>Identify Plants</h1>
   <div id="new-search">
     <%= form_tag('/plants_search', remote: true, method: 'get') do %>
+    <%# button_tag "New Plant Search", id: "new-search-btn", onclick: 'show_leaves_search()', remote: true %>
     <%= link_to "Find Plant", leaves_search_path, remote: true, id: "new-search-btn" %>
     <% end %>
   </div>
