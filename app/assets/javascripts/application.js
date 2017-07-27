@@ -13,9 +13,4 @@
 //= require rails-ujs
 //= require_tree .
 //= require jquery
-$(document).ready(function() {
-  // $('#new-search-btn').click(function(e){
-  //   $('#leaves-search').html('<%= j render("leaves_form") %>');
-  //   $('#new-search').hide();
-  // });
-});
+$(document).ready(function() { });
