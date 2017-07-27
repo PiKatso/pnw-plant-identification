@@ -1,0 +1,8 @@
+$('#leaves-search').html('<%= j render("leaves_form") %>');
+$('#new-search').hide();
+
+// cones-search
+$('#leaves-btn').click(function(e){
+  $('#cones-search').html('<%= j render("cones_form") %>');
+  $('#leaves-search').hide();
+});

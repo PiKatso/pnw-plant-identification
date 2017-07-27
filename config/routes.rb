@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :plants
 
-  get "/leaves_search" => "plants#index"
+  get "/leaves_search" => "plants#leaves_search"
   get "/cones_search" => "plants#index"
   get "/bark_search" => "plants#index"
   get "/branches_search" => "plants#index"

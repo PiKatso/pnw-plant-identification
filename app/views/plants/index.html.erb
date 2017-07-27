@@ -1,18 +1,13 @@
 <h1>Identify Plants</h1>
-<%= form_tag('/plants_search', remote: true, method: 'get') do %>
-  <div id="leaves-search">
-    <%= label_tag(:leaves, "Search by leaves type") %>
-    <br>
-    <%= select_tag :leaves, options_from_collection_for_select(@plants.uniq{ |o| o.leaves }, :leaves, :leaves) %>
-    <br>
-    <%= button_tag "Leaves Search", :id => "leaves-btn" %>
-  <% end %>
+  <div id="new-search">
+    <%= form_tag('/plants_search', remote: true, method: 'get') do %>
+    <%= link_to "Find Plant", leaves_search_path, remote: true, id: "new-search-btn" %>
+    <% end %>
   </div>
-
+  <div id="leaves-search"></div>
   <div id="cones-search"></div>
   <div id="bark-search"></div>
   <div id="branches-search"></div>
-
 <br>
 
 <div class="plant-plants">

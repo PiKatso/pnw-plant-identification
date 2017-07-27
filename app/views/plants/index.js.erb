@@ -1,21 +1,14 @@
 $(document).ready(function() {
-  // btn leaves-search
-  $('#leaves-btn').on("click", function(e){
-    $('#cones-search').html('<%= j render("cones_form") %>');
-    $('#leaves-search').hide();
-    // e.preventDefault();
-  });
+
   // btn cones-search
-  $('#cones-btn').on("click", function(e){
+  $('#cones-btn').click(function(e){
     $('#bark-search').html('<%= j render("bark_form") %>');
     $('#cones-search').hide();
-    // e.preventDefault();
   });
   // btn bark-search
-  $('#bark-btn').on("click", function(e){
+  $('#bark-btn').click(function(e){
     $('#branches-search').html('<%= j render("branches_form") %>');
     $('#bark-search').hide();
-    // e.preventDefault();
   });
   // btn branches/submit-search
 });
